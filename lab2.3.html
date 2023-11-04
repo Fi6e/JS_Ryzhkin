@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Таблиця та обчислення</title>
+</head>
+<body>
+  <h1>Обчислення за формулою A<sub>ij</sub> = 2j + i</h1>
+  <label for="rowCount">Кількість рядків:</label>
+  <input type="number" id="rowCount" min="1" value="5">
+  <br>
+  <label for="colCount">Кількість стовпців:</label>
+  <input type="number" id="colCount" min="1" value="5">
+  <br>
+  <button onclick="createTable()">Створити таблицю</button>
+  <p id="result"></p>
+
+  <script>
+    function createTable() {
+      const rowCount = parseInt(document.getElementById("rowCount").value);
+      const colCount = parseInt(document.getElementById("colCount").value);
+      const resultElement = document.getElementById("result");
+
+      const array = [];
+      const table = document.createElement("table");
+      for (let i = 1; i <= rowCount; i++) {
+        const row = document.createElement("tr");
+        const rowArray = [];
+        for (let j = 1; j <= colCount; j++) {
+          const cell = document.createElement("td");
+          const value = 2 * j + i;
+          cell.textContent = value;
+          row.appendChild(cell);
+          rowArray.push(value);
+        }
+        table.appendChild(row);
+        array.push(rowArray);
+      }
+
+      // Вивід таблиці на сторінку
+      resultElement.innerHTML = "";
+      resultElement.appendChild(table);
+
+      // Обчислення суми всіх елементів
+      let sum = 0;
+      for (let i = 0; i < rowCount; i++) {
+        for (let j = 0; j < colCount; j++) {
+          sum += array[i][j];
+        }
+      }
+      resultElement.innerHTML += "<p>Сума елементів двовимірного масиву: " + sum + "</p>";
+    }
+  </script>
+ <li><a href="lab2.html">Повернутися  <- </a></li>
+</body>
+</html>
