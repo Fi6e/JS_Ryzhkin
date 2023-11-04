@@ -1,0 +1,130 @@
+body {
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-color: #1c1d1f;
+    margin: 40px;
+}
+
+#box1 {
+    margin: 0px auto 0px auto;
+    width: 300px;
+}
+ul.tabs li a:hover {
+    background-color: #6a6a6a;
+    border-color: #2f343a;
+}
+
+ul.tabs li a.active {
+    background-color: #8b8b8b;
+    color: #282e32;
+    border: 1px solid #464c54;
+    border-bottom: 1px solid #ffffff;
+    background-repeat: repeat-x;
+    background-position: top;
+}
+
+.content {
+    background-color: #6a6a6a;
+    padding: 10px;
+    border: 1px solid #242527;
+    font-family: 'Courier New', Courier, monospace;
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
+
+#content_2, #content_3 {
+    display: none;
+}
+
+.content ul {
+    margin: 0px;
+    padding: 0px 20px 0px 20px;
+}
+
+.content ul li {
+    list-style: none;
+    border-bottom: 1px solid #d6dde0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 13px;
+}
+
+.content ul li:last-child {
+    border-bottom: none;
+}
+
+.content ul li a {
+    text-decoration: none;
+    color: #dbe1e5;
+}
+
+.content ul li a small {
+    color: #8b959c;
+    font-size: 9px;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    left: 4px;
+    top: 0px;
+}
+.content ul li a:hover {
+    color: #9d9d9d;
+}
+.content ul li a:hover small {
+    color: #9d9d9d;
+}
+#h4 {
+font-family: 'Courier New', Courier, monospace;
+}
+
+.box h4 {
+    font-size: 23px;
+    color: #e2dada;
+    margin-bottom: 10px;
+}
+
+.box h4 small {
+    color: #a5a7a8;
+    font-weight: normal;
+    font-size: 9px;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    position: relative;
+    left: 6px;
+}
+
+.place {
+    border: 1px solid #000000;
+    background-color: #1a1a1b;
+    padding: 8px;
+    box-shadow: 0 0 1px 2px rgb(170, 164, 164);
+}
+
+
+ul.tabs {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 5px;
+    margin-bottom: 6px;
+}
+
+ul.tabs li {
+    list-style: none;
+    display: inline;
+}
+
+ul.tabs li a {
+    background-color: #9d9d9d;
+    color: #ebe9e2;
+    padding: 8px 14px 8px 14px;
+    text-decoration: none;
+    font-size: 9px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 1px solid #464c54;
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
+
+
