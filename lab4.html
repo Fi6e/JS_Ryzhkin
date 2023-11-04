@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Лабораторна робота 4</title>
+    <script type="text/javascript">
+        function calculateScore() {
+            let totalScore = 0;
+
+            // Оцінка для запитань радіокнопок
+            const radioOptions0 = document.getElementsByName('radio0');
+            let radio0Score = 0;
+            for (let i = 0; i < radioOptions0.length; i++) {
+                if (radioOptions0[i].type === 'radio' && radioOptions0[i].checked) {
+                    radio0Score = parseFloat(radioOptions0[i].value);
+                    break;
+                }
+            }
+            totalScore += radio0Score;
+            document.getElementById('rezultatRadio0').innerHTML = radio0Score === 1 ? '1' : '0';
+
+            // Оцінка для питань зі списками множинного вибору (Питання 5)
+            const multiselectOptions0 = document.getElementsByName('multiselect0')[0];
+            let selectedMultiselectCount0 = 0;
+            let correctMultiselectCount0 = 0;
+            for (let i = 0; i < multiselectOptions0.options.length; i++) {
+                if (multiselectOptions0.options[i].selected) {
+                    selectedMultiselectCount0++;
+                    if (multiselectOptions0.options[i].value === 'correct') {
+                        correctMultiselectCount0++;
+                    }
+                }
+            }
+
+            if (correctMultiselectCount0 === 2) {
+                totalScore += 2; // Якщо обрано обидві правильні відповіді, додайте 2 бали.
+            } else if (correctMultiselectCount0 === 1) {
+                totalScore += 1; // Якщо обрана лише одна правильна відповідь, додайте 1 бал.
+            }
+
+            document.getElementById('rezultatMultiselect0').innerHTML = correctMultiselectCount0 === 2 ? '2' : correctMultiselectCount0 === 1 ? '1' : '0';
+
+            // Оцінка для питань зі списками множинного вибору (Питання 6)
+            const multiselectOptions1 = document.getElementsByName('multiselect1')[0];
+            let selectedMultiselectCount1 = 0;
+            let correctMultiselectCount1 = 0;
+            for (let i = 0; i < multiselectOptions1.options.length; i++) {
+                if (multiselectOptions1.options[i].selected) {
+                    selectedMultiselectCount1++;
+                    if (multiselectOptions1.options[i].value === 'correct') {
+                        correctMultiselectCount1++;
+                    }
+                }
+            }
+
+            if (correctMultiselectCount1 === 2) {
+                totalScore += 2; // Якщо обрано обидві правильні відповіді, додайте 2 бали.
+            } else if (correctMultiselectCount1 === 1) {
+                totalScore += 1; // Якщо обрана лише одна правильна відповідь, додайте 1 бал.
+            }
+
+            document.getElementById('rezultatMultiselect1').innerHTML = correctMultiselectCount1 === 0 ? '0' : correctMultiselectCount1 === 1 ? '1' : '2';
+
+
+
+            // Оцінка для питань з введенням речення (Питання 7)
+            const sentenceAnswer0 = document.getElementsByName('sentence0')[0].value.trim();
+            if (sentenceAnswer0.toLowerCase() === 'apple') {
+                totalScore += 1;
+                document.getElementById('rezultatSentence0').innerHTML = '1';
+            } else {
+                document.getElementById('rezultatSentence0').innerHTML = '0';
+            }
+
+            // Питання 2 (Питання з радіокнопками)
+            const radioOptions1 = document.getElementsByName('radio1');
+            let radio1Score = 0;
+            for (let i = 0; i < radioOptions1.length; i++) {
+                if (radioOptions1[i].type === 'radio' && radioOptions1[i].checked) {
+                    radio1Score = parseFloat(radioOptions1[i].value);
+                    break;
+                }
+            }
+            totalScore += radio1Score;
+            document.getElementById('rezultatRadio1').innerHTML = radio1Score === 1 ? '1' : '0';
+
+            // Питання 3 (Питання з прапорців)
+            const checkboxOptions0 = document.getElementsByName('checkbox0');
+            let selectedCheckboxCount0 = 0;
+            for (let i = 0; i < checkboxOptions0.length; i++) {
+                if (checkboxOptions0[i].type === 'checkbox' && checkboxOptions0[i].checked) {
+                    selectedCheckboxCount0++;
+                    if (checkboxOptions0[i].value === 'correct') {
+                        totalScore += 1;
+                    }
+                }
+            }
+            document.getElementById('rezultatCheckbox0').innerHTML = selectedCheckboxCount0 === 2 ? '2' : selectedCheckboxCount0 === 1 ? '1' : '0';
+
+            // Питання 4 (Питання з прапорців)
+            const checkboxOptions1 = document.getElementsByName('checkbox1');
+            let selectedCheckboxCount1 = 0;
+            for (let i = 0; i < checkboxOptions1.length; i++) {
+                if (checkboxOptions1[i].type === 'checkbox' && checkboxOptions1[i].checked) {
+                    selectedCheckboxCount1++;
+                    if (checkboxOptions1[i].value === 'correct') {
+                        totalScore += 1;
+                    }
+                }
+            }
+            document.getElementById('rezultatCheckbox1').innerHTML = selectedCheckboxCount1 === 0 ? '0' : selectedCheckboxCount1 === 1 ? '1' : '2';
+
+
+            // Виведіть загальний бал
+            document.getElementById('totalScore').innerHTML = 'Загальний бал: ' + totalScore;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <!-- Питання 1: радіокнопки -->
+        <p>1. Коли був створений перший комп'ютер:</p>
+        <input type="radio" name='radio0' value='0'> 1 липня 1955 року
+        <input type="radio" name='radio0' value='0'> 23 січня 1963 року
+        <input type="radio" name='radio0' value='1'> 15 лютого 1946 року
+        <input type="radio" name='radio0' value='0'> 31 грудня 1944 року
+        <p>Результат: <span id='rezultatRadio0'></span></p>
+
+        <!-- Питання 2: радіокнопки -->
+        <p>2. Коли з'явився інтернет:</p>
+        <input type="radio" name='radio1' value='1'> 1 січня 1983 року
+        <input type="radio" name='radio1' value='0'> 10 травня 1979 року
+        <input type="radio" name='radio1' value='0'> 6 березня 1984 року
+        <input type="radio" name='radio1' value='0'> 15 квітня 1982 року
+        <p>Результат: <span id='rezultatRadio1'></span></p>
+
+        <!-- Питання 3: прапорці -->
+        <p>3. Що означає абревіатура CPU? (оберіть 2 або більше відповіді):</p>
+        <input type='checkbox' name='checkbox0' value='correct'>  Central Processing Unit
+        <input type='checkbox' name='checkbox0' value='incorrect'> Central Program Unit
+        <input type='checkbox' name='checkbox0' value='correct'> Computer Personal Unit
+        <input type='checkbox' name='checkbox0' value='incorrect'> Central Print Unit
+        <p>Результат: <span id='rezultatCheckbox0'></span></p>
+      
+        <!-- Питання 4: прапорці -->
+        <p>4. Яка функція відповідає за зберігання постійних даних на комп'ютері? (оберіть 2 або більше відповіді):</p>
+        <input type='checkbox' name='checkbox1' value='correct'> RAM
+        <input type='checkbox' name='checkbox1' value='correct'> HDD 
+        <input type='checkbox' name='checkbox1' value='incorrect'> CPU
+        <input type='checkbox' name='checkbox1' value='incorrect'> GPU 
+        <p>Результат: <span id='rezultatCheckbox1'></span></p>
+
+        <!-- Питання 5: списки множинного вибору -->
+        <p>5. Що означає абревіатура HTML? (оберіть 2 або більше відповіді):</p>
+        <select name='multiselect0' multiple>
+            <option value='incorrect'>High Tech Modern Language</option>
+            <option value='incorrect'>Home Tool Markup Language</option>
+            <option value='correct'>Hyperlink and Text Markup Language</option>
+            <option value='correct'>Hyper Text Markup Language</option>
+        </select>
+        <p>Результат: <span id='rezultatMultiselect0'></span></p>
+
+        <!-- Питання 6: списки множинного вибору -->
+        <p>6. Які типи відомих операційних систем включають Windows і macOS? (оберіть 2 або більше відповіді):</p>
+        <select name='multiselect1' multiple>
+            <option value='correct'>Microsoft та Apple</option>
+            <option value='incorrect'>Linux и Ubuntu</option>
+            <option value='correct'>Windows і Linux</option>
+            <option value='incorrect'>Android та iOS</option>
+        </select>
+        <p>Результат: <span id='rezultatMultiselect1'></span></p>
+
+        <!-- Питання 7: введення речення -->
+        <p>7. Якій компанії належить операційна система macOS та iOS:</p>
+        <input type='text' name='sentence0'>
+        <p>Результат: <span id='rezultatSentence0'></span></p>
+
+        <input type='button' value='Підрахувати бали' onclick='calculateScore()'>
+        <div id='totalScore'></div>
+    </form>
+    <li><a href="index.html">Повернутися  <- </a></li>
+</body>
+</html>
