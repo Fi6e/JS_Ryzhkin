@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<title>lab1 question 3</title>
+<head>
+<script>
+function fun(a) {
+  document.getElementById('t_res').value = a;
+}
+
+function fun1(a) {
+  document.getElementById('t_res2').value = a;
+}
+</script>
+</head>
+<body onload="fun('Відбулось завантаження сторінки');">
+  <form id="main_form">
+    <input type="text" size="100" id="t_res" onmouseover="fun('Курсор потрапив на гіперпосилання');" onmouseout="fun('Курсор потрапив не на гіперпосилання');"><br>
+  </form>
+  <li><a href="lab1.html">Повернутися  <- </a></li>
+</body>
+</html>
+
+<!-- onLoad, onMouseOut -->

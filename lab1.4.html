@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>lab 1 question 4 </title>
+
+    <script>
+        function calculate() {
+            const x = document.getElementById("x").value;
+            const y = document.getElementById("y").value;
+            const result = document.getElementById("result");
+
+            if (x *y!= -100) {
+                result.value = (2 * x) / y;
+            } else if (x *y!= 20 ) {
+                result.value = Math.pow(x , 3) - 2(x * y)
+            } else {
+                result.value = Math.pow(x, 2) + 4;
+            }
+        }
+    </script>
+</head>
+<body>
+<p> x= <input type="number" id="x" value="3"></p>
+<p> y= <input type="number" id="y" value="2"></p>
+<p> result= <input type="number" id="result" value="" disabled></p>
+<br>
+<button onClick="calculate()">calculate</button>
+<br>
+<li><a href="lab1.html">Повернутися  <- </a></li>
+</body>
+</html>

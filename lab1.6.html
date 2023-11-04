@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>lab 1 question 6 </title>
+
+    <script>
+        const continents = ["Африка", "Євразія", "Північна Америка", "Південна Америка", "Австралія", "Антарктида"];
+        const populationDensity = [30.5, 91, 22.9, 27, 3.3, 0.0006]; // інформація з інтернету
+        const area = [30370000, 54760000, 24710000, 17840000, 7688000 , 13660000 ]; // інформація з інтернету
+        let index;
+
+
+        function findIndex(name) {
+            return continents.findIndex(continent => continent === name);
+        }
+
+        function fun1() {
+            const areaInp = document.getElementById("area");
+            const popDenInp = document.getElementById("popDen");
+            const name = document.getElementById("name").value;
+            index = findIndex(name);
+
+            if (index !== -1) {
+                areaInp.value = area[index];
+                popDenInp.value = populationDensity[index];
+            } else {
+                areaInp.value = "";
+                popDenInp.value = "Континент не знайдено";
+            }
+        }
+
+
+        function fun2() {
+            const popInp = document.getElementById("pop");
+            if (index !== -1) {
+                popInp.value = populationDensity[index] * area[index];
+            } else {
+                popInp.value = "Континент не знайдено";
+            }
+        }
+
+    </script>
+</head>
+<body>
+<label for="name">Введіть назву континенту </label><input id="name" value="Африка"><br>
+
+<label for="area">Площа= </label><input id="area" value="" disabled><br>
+<label for="popDen">Густина населення= </label><input id="popDen" value="" disabled><br>
+<label for="pop">Населення= </label><input id="pop" value="" disabled><br>
+<br>
+<button onClick="fun1()">Отримати густину населення та площу</button>
+<br>
+<button onClick="fun2()">Отримати кількість населення</button>
+<br>
+<li><a href="lab1.html">Повернутися  <- </a></li>
+</body>
+</html>
